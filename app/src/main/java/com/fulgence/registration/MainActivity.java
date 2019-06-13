@@ -16,6 +16,7 @@ EditText mail;
 EditText password;
 String email;
 String passw;
+    //String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +33,18 @@ String passw;
 
 
 if(TextUtils.isEmpty(email)){
-    Toast.makeText(this, "Email is required!!!", Toast.LENGTH_LONG).show();
+   // Toast.makeText(this, "Email is required!!!", Toast.LENGTH_LONG).show();
+    mail.setError("provide  email");
     return;
 }
+//else if (!emailPattern.equals(email)){
+    //mail.setError("provide valid email");
+    //return;
+//}
 if (TextUtils.isEmpty(passw)){
 
-    Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
-
+    //Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
+    password.setError("password please!!!!");
     return;
 }
 if (passw.length()<6 || passw.length()>32){
